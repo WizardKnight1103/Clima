@@ -1,0 +1,39 @@
+{
+    "name": "API de clima",
+    "short_name": "API",
+    "description": "Web con uso de la API de clima",
+    "lang": "es-mx",
+    "display": "standalone",
+    "background_color": "#2E3440",
+    "theme_color": "#88C0D0",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/img/icon1.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/icon2.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/img/cap1.png",
+            "sizes": "1366x647",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/img/cap2.png",
+            "sizes": "468x466",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ],
+    "id": "/",
+    "start_url": "/index.html",
+    "scope": "/"
+}

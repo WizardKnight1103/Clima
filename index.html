@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="icon" href="img/icon1.png">
+    <link rel="manifest" href="manifest.json"> 
+    <title>Clima</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+</head>
+<body>
+    <button id="dark-mode-toggle">Modo Oscuro</button>
+
+    <!-- Animación de carga -->
+    <div id="loading">
+        <div class="loader"></div>
+        <p>Cargando...</p>
+    </div>
+
+    <div class="contenedor">
+        <!-- Buscador de ciudad -->
+        <div class="busqueda">
+            <input type="text" id="ciudad-input" placeholder="Ingresa una ciudad">
+            <button id="buscar-btn">Buscar</button>
+            <div id="mensaje-error" style="display: none; color: red;"></div>
+        </div>
+
+        <div class="clima-actual">
+            <div class="info-principal">
+                <h2 id="ciudad">Ciudad, País</h2>
+                <p id="fecha-hora">Fecha y hora</p>
+                <h1 id="temperatura">-°C</h1>
+                <p id="sensacion">Sensación térmica: -°C</p>
+                <p id="descripcion">Descripción del clima</p>
+                <div class="detalles">
+                    <p>Viento: <span id="viento">-- km/h</span></p>
+                    <p>Humedad: <span id="humedad">--%</span></p>
+                    <p>Presión: <span id="presion">-- hPa</span></p>
+                    <p>Índice UV: <span id="uv-index">--</span></p>
+                    <p>Salida del sol: <span id="sunrise">--:--</span></p>
+                    <p>Puesta del sol: <span id="sunset">--:--</span></p>
+                </div>
+            </div>
+            
+            <!-- Lottie reemplaza el icono de clima -->
+            <div class="icono-clima">
+                <div id="weather-icon" class="lottie-icon"></div>
+            </div>
+        </div>
+
+        <div class="pronostico">
+            <div class="dia" id="dia1">
+                <p>Martes</p>
+                <div id="pronostico-dia-1" class="icono-clima"></div>
+            </div>
+            <div class="dia" id="dia2">
+                <p>Miércoles</p>
+                <div id="pronostico-dia-2" class="icono-clima"></div>
+            </div>
+            <div class="dia" id="dia3">
+                <p>Jueves</p>
+                <div id="pronostico-dia-3" class="icono-clima"></div>
+            </div>
+            <div class="dia" id="dia4">
+                <p>Viernes</p>
+                <div id="pronostico-dia-4" class="icono-clima"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Registrar el Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registrado con éxito:', registration);
+                    })
+                    .catch(error => {
+                        console.error('Error registrando el Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
+

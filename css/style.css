@@ -1,0 +1,253 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para el botón de modo oscuro */
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .contenedor {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-mode .clima-actual {
+    background: linear-gradient(135deg, #333, #555);
+    color: #ffffff;
+}
+
+body.dark-mode .dia {
+    background-color: #333;
+    color: #ffffff;
+}
+
+body.dark-mode .busqueda {
+    background-color: #333;
+    color: #ffffff;
+}
+
+body.dark-mode #ciudad-input {
+    background-color: #444;
+    color: #ffffff;
+    border-color: #555;
+}
+
+body.dark-mode #buscar-btn {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+body.dark-mode #buscar-btn:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: #333;
+    color: #ffffff;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background-color: #555;
+}
+
+/* Animación de carga */
+#loading {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1000;
+}
+
+#loading p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Contenedor principal */
+.contenedor {
+    background: white;
+    border-radius: 15px;
+    width: 500px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Clima actual */
+.clima-actual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #ffcc80, #81d4fa);
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.info-principal {
+    flex: 1;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.detalles {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Iconos animados de Lottie */
+.lottie-icon {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efectos de hover en los iconos */
+.lottie-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Ajuste de iconos en modo oscuro */
+body.dark-mode .lottie-icon {
+    filter: brightness(0.8);
+}
+
+/* Pronóstico de los próximos días */
+.pronostico {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.dia {
+    background: #eee;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dia img {
+    width: 40px;
+    margin: 5px 0;
+}
+
+.dia p {
+    font-size: 14px;
+}
+
+/* Estilos para el buscador */
+.busqueda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#ciudad-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+#buscar-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#buscar-btn:hover {
+    background-color: #0056b3;
+}
+
+#mensaje-error {
+    margin-top: 10px;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
